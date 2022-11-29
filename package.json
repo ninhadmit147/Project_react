@@ -5,14 +5,20 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "server": "json-server --watch db.json",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.8.0",
+    "@reduxjs/toolkit": "^1.9.0",
+    "antd": "^5.0.1",
+    "firebase": "^9.14.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.39.2",
     "react-redux": "^8.0.5",
+    "react-router-dom": "^6.4.3",
     "redux": "^4.2.0"
   },
   "devDependencies": {

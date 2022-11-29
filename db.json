@@ -3,27 +3,38 @@
     {
       "id": 1,
       "name": "Product A",
-      "image": "",
-      "price":0,
-      "sale":0,
-      "categories":"",
-      "description":"",
-      "amount":1,
-      "rating":""
+      "image": "https://res.cloudinary.com/thisisninh/image/upload/v1668090299/news_ecjn4b.png",
+      "price": 300,
+      "sale": 259,
+      "categories": "",
+      "description": "",
+      "amount": 1,
+      "rating": "1"
+    },
+    {
+      "id": 2,
+      "name": "Product B",
+      "image": "https://res.cloudinary.com/thisisninh/image/upload/v1668090581/product_wzvorr.png",
+      "price": 400,
+      "sale": 370,
+      "categories": "",
+      "description": "",
+      "amount": 1,
+      "rating": "1"
     }
   ],
-  "categories":[
+  "categories": [
     {
-      "id":1,
-      "name":"Category 1"
+      "id": 1,
+      "name": "Category 1"
     }
   ],
-  "users":[
+  "users": [
     {
-      "id":1,
-      "username":"admin",
-      "email":"ninhxz147",
-      "password":"admit147"
+      "id": 1,
+      "username": "admin",
+      "email": "ninhxz147",
+      "password": "admit147"
     }
   ]
 }
