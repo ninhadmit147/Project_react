@@ -8,6 +8,7 @@ import ProductList from './component/admin/product/product_list'
 import ProductAdd from './component/admin/product/product_add'
 import Signin from './component/auth/signin'
 import Signup from './component/auth/signup'
+import ProductEdit from './component/admin/product/product_edit'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,6 +26,7 @@ function App() {
       <Route path='/admin' element={<Admin />}>
         <Route path='products' element={<ProductList />} />
         <Route path='products/add' element={<ProductAdd />} />
+        <Route path='products/:id/edit' element={<ProductEdit />} />
       </Route>
       <Route path='/signin' element={<Signin />} />
       <Route path='/signup' element={<Signup />} />

@@ -1,4 +1,5 @@
 import { Table, Button, message, Space, Popconfirm } from 'antd'
+import { Link } from 'react-router-dom'
 import { useGetProductsQuery, useRemoveProductMutation } from '../../../service/product'
 const { Column } = Table
 const ProductList = () => {
@@ -33,17 +34,20 @@ const ProductList = () => {
                     (product) => {
                         console.log(product);
                         return (
-                            <Popconfirm
-                                placement='topRight'
-                                title="You want to delete ?"
-                                onConfirm={() => removeItem(product.key)}
-                                okText="Yes"
-                                cancelText="No"
-                            >
-                                <Button type='primary' danger>
-                                    Delete
-                                </Button>
-                            </Popconfirm>
+                            <>
+                                <Button href={`products/${product.key}/edit`} type='link'>Update</Button>
+                                <Popconfirm
+                                    placement='topRight'
+                                    title="You want to delete ?"
+                                    onConfirm={() => removeItem(product.key)}
+                                    okText="Yes"
+                                    cancelText="No"
+                                >
+                                    <Button type='primary' danger>
+                                        Delete
+                                    </Button>
+                                </Popconfirm>
+                            </>
                         )
                     }
                 }></Column>

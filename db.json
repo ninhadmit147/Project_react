@@ -6,8 +6,8 @@
       "image": "https://res.cloudinary.com/thisisninh/image/upload/v1668090299/news_ecjn4b.png",
       "price": 300,
       "sale": 259,
-      "categories": "",
-      "description": "",
+      "categories": 1,
+      "description": "Description",
       "amount": 1,
       "rating": "1"
     },
@@ -17,8 +17,8 @@
       "image": "https://res.cloudinary.com/thisisninh/image/upload/v1668090581/product_wzvorr.png",
       "price": 400,
       "sale": 370,
-      "categories": "",
-      "description": "",
+      "categories": 1,
+      "description": "Description",
       "amount": 1,
       "rating": "1"
     }
