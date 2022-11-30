@@ -23,7 +23,7 @@ const Slider = (props: Props) => {
     const startSlider = () => {
         setInterval(() => {
             handleNext()
-        }, 3000)
+        }, 8000)
     }
     const handlePre = () => {
         const imgLenght = featureImg.length
@@ -40,7 +40,7 @@ const Slider = (props: Props) => {
         <div className='container mx-auto select-none relative'>
             <div ref={slideRef} className="w-full">
                 <img src={featureImg[image]} alt="" />
-                <div className="absolute top-1/2 w-2/3 flex justify-between transform -translate-y-1/2 py-2 px-2">
+                <div className="absolute top-1/2 w-full flex justify-between transform -translate-y-1/2 py-2 px-2">
                     <button onClick={() => handlePre()} className='rounded-full p-2 opacity-25 hover:opacity-100 ease-in duration-100 bg-white'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />

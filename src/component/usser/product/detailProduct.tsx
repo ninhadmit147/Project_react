@@ -1,21 +1,26 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
+import { useGetProductQuery } from '../../../service/product'
 
 type Props = {}
 
 const DetailProduct = (props: Props) => {
+  const { id } = useParams()
+  const { data: product, isLoading, isError } = useGetProductQuery(id as any)
+
   return (
     <div className="min-h-screen">
       <div className="flex p-6 font-mono">
-        <div className="flex-none w-48 mb-10 relative z-10 before:absolute before:top-1 before:left-1 before:w-full before:h-full before:bg-teal-400">
-          <img src="/retro-shoe.jpg" alt="" className="absolute z-10 inset-0 w-full h-full object-cover rounded-lg" loading="lazy" />
+        <div className="flex-none w-48 mb-10 relative z-10 before:absolute before:top-1 before:left-1 before:w-full before:h-full before:bg-white">
+          <img src={product?.image} alt="" className="absolute z-10 inset-0 w-full h-full object-cover rounded-lg" loading="lazy" />
         </div>
         <form className="flex-auto pl-6">
           <div className="relative flex flex-wrap items-baseline pb-6 before:bg-black before:absolute before:-top-6 before:bottom-0 before:-left-60 before:-right-6">
             <h1 className="relative w-full flex-none mb-2 text-2xl font-semibold text-white">
-              Retro Shoe
+              {product?.name}
             </h1>
             <div className="relative text-lg text-white">
-              $89.00
+              ${product?.price}
             </div>
             <div className="relative uppercase text-teal-400 ml-3">
               In stock
@@ -71,7 +76,7 @@ const DetailProduct = (props: Props) => {
             </button>
           </div>
           <p className="text-xs leading-6 text-slate-500">
-            Free shipping on all continental US orders.
+            {product?.description}
           </p>
         </form>
       </div>

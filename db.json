@@ -21,12 +21,31 @@
       "description": "Description",
       "amount": 1,
       "rating": "1"
+    },
+    {
+      "name": "Who that pokemon update",
+      "price": 22,
+      "sale": 12,
+      "amount": 2312,
+      "category": 2,
+      "description": "3232323",
+      "image": "",
+      "rate": 1,
+      "id": 3
     }
   ],
   "categories": [
     {
       "id": 1,
-      "name": "Category 1"
+      "name": "Men"
+    },
+    {
+      "id": 2,
+      "name": "Women"
+    },
+    {
+      "id": 3,
+      "name": "Unisex"
     }
   ],
   "users": [

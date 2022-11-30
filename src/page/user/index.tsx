@@ -7,10 +7,16 @@ type Props = {}
 
 const HomePage = (props: Props) => {
   return (
-    <div className=''>
-      <Header />
-      <Outlet />
-      <Footer />
+    <div className='snap-y snap-proximity'>
+      <div className="snap-start">
+        <Header />
+      </div>
+      <div className="snap-start">
+        <Outlet />
+      </div>
+      <div className="snap-start">
+        <Footer />
+      </div>
     </div>
   )
 }

@@ -22,9 +22,9 @@ const AllProducts = () => {
     )
   }
   return (
-    <div className="">
+    <div className="min-h-screen">
       <Slider />
-      <div className="article my-10 xl:container lg:container md:w-full sm:w-full mx-auto ">
+      <div className="article min-h-screen my-10 xl:container lg:container md:w-full sm:w-full mx-auto ">
         <h1 className="text-center text-3xl font-bold">New</h1>
         <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 gap-5 mt-12">
           {produts.map((item) => (

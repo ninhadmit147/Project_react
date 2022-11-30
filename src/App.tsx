@@ -9,6 +9,7 @@ import ProductAdd from './component/admin/product/product_add'
 import Signin from './component/auth/signin'
 import Signup from './component/auth/signup'
 import ProductEdit from './component/admin/product/product_edit'
+import Auth from './page/auth'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,8 +20,6 @@ function App() {
         <Route index element={<AllProducts />} />
         <Route path='product/:id/detail' element={<DetailProduct />} />
         <Route path='products' element={<h1>List</h1>} />
-        <Route path='signin' element={<h1>Signin</h1>} />
-        <Route path='signup' element={<h1>Signup</h1>} />
       </Route>
 
       <Route path='/admin' element={<Admin />}>
@@ -28,8 +27,10 @@ function App() {
         <Route path='products/add' element={<ProductAdd />} />
         <Route path='products/:id/edit' element={<ProductEdit />} />
       </Route>
-      <Route path='/signin' element={<Signin />} />
-      <Route path='/signup' element={<Signup />} />
+      <Route path='/auth' element={<Auth />}>
+        <Route index element={<Signin />} />
+        <Route path='signup' element={<Signup />} />
+      </Route>
     </Routes>
   )
 }

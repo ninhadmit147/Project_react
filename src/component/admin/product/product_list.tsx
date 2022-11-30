@@ -1,5 +1,6 @@
 import { Table, Button, message, Space, Popconfirm } from 'antd'
 import { Link } from 'react-router-dom'
+import { IProduct } from '../../../interface/product'
 import { useGetProductsQuery, useRemoveProductMutation } from '../../../service/product'
 const { Column } = Table
 const ProductList = () => {
@@ -7,7 +8,7 @@ const ProductList = () => {
     const [removeData] = useRemoveProductMutation()
     console.log(products);
     const getAll = () => {
-        return products.map((item) => ({
+        return products.map((item: IProduct) => ({
             key: item.id,
             name: item.name,
             image: item.image,
