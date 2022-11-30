@@ -54,9 +54,6 @@ const ProductEdit = () => {
                     });
                 }
             );
-        } else {
-            const img = product?.image
-            setDownloadURL(img as string)
         }
 
     }
@@ -82,8 +79,14 @@ const ProductEdit = () => {
 
     const submitForm = (value: any) => {
         console.log(value);
-        const productupdate = { ...value, image: downloadURL, rate: 1, id: id };
-        updateProd(productupdate)
+        if (!imgUpload) {
+            const productupdate = { ...value, image: product?.image, rate: 1, id: id };
+            updateProd(productupdate)
+        }
+        else {
+            const productupdate = { ...value, image: downloadURL, rate: 1, id: id };
+            updateProd(productupdate)
+        }
         setTimeout(() => {
             message.success("Update successful (^_^)")
         }, 2000)
