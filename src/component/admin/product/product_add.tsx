@@ -1,25 +1,59 @@
 import { PlusOutlined } from '@ant-design/icons';
-import { Button, DatePicker, Form, Input, InputNumber, Select, Upload } from 'antd';
+import { Button, DatePicker, Form, Input, InputNumber, message, Select, Upload } from 'antd';
+import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { IProduct } from '../../../interface/product';
+import { storage } from '../../../app/firebase';
 
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 const ProductAdd = () => {
-    const [imgUpload, setImgUpload] = useState()
-    const customUpload = () => {
+    //Uploadfile
+
+    const [imgUpload, setImgUpload] = useState<File>()
+    const [downloadURL, setDownloadURL] = useState('')
+    const [progressUpload, setProgressUpload] = useState(0)
+    const onChangeImg = (e: any) => {
+        setImgUpload(e.file.originFileObj);
+        if (imgUpload) {
+            const image = imgUpload?.name
+            const storageRef = ref(storage, `image/${image}`)
+            const uploadTask = uploadBytesResumable(storageRef, imgUpload)
+            uploadTask.on('state_changed',
+                (snapshot) => {
+                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    setProgressUpload(progress)
+                    switch (snapshot.state) {
+                        case 'paused':
+                            console.log('Upload is paused');
+                            break;
+                        case 'running':
+                            console.log('Upload is running');
+                            break;
+                    }
+                },
+                (error) => {
+                    message.error(error.message)
+                },
+                () => {
+                    getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+                        setDownloadURL(url)
+                    });
+                }
+            );
+        }
 
     }
-    const onPreview = () => {
 
-    }
-    const { register, handleSubmit, reset, formState: { errors } } = useForm<IProduct>()
-    const onSubmit: SubmitHandler<IProduct> = (data) => {
-        console.log(data);
-    }
+
+
+
+
+
     const submitForm = (value: any) => {
         console.log(value);
+        const product = { ...value, image: downloadURL }
+        console.log(product);
+
 
     }
     return (
@@ -48,6 +82,7 @@ const ProductAdd = () => {
             <Form.Item label="Upload" valuePropName="fileList">
                 <Upload
                     listType="picture-card"
+                    onChange={onChangeImg}
                 >
                     <div>
                         <PlusOutlined />
