@@ -10,7 +10,7 @@ import { useAddProductMutation } from '../../../service/product';
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 const ProductAdd = () => {
-    const { data: cate = [], isLoading, isError } = useGetCategoriesQuery()
+    const { data: cate = [] } = useGetCategoriesQuery()
     console.log(cate);
     cate: [] = [
         { id: 1, name: "1" },
@@ -22,7 +22,7 @@ const ProductAdd = () => {
             label: item.name
         }))
     }
-    const [addProduct] = useAddProductMutation();
+    const [addProduct, { isLoading, isError }] = useAddProductMutation();
 
     //Upload file
 
@@ -114,7 +114,7 @@ const ProductAdd = () => {
                     </Upload>
                 </Form.Item>
                 <Form.Item label="Button">
-                    <Button htmlType='submit'>Button</Button>
+                    <Button htmlType='submit' loading={isLoading}>Button</Button>
                 </Form.Item>
             </Form>
         </>

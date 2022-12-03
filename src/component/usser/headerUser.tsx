@@ -1,10 +1,14 @@
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 type Props = {}
 
-const Header = (props: Props) => {
-
+const HeaderUser = (props: Props) => {
+  const navidate = useNavigate()
+  const Signout = () => {
+    localStorage.removeItem("user")
+    navidate("/auth")
+  }
   return (
     <div className="header w-full justify-between px-10 flex ">
       <div className="p-2 flex">
@@ -31,12 +35,12 @@ const Header = (props: Props) => {
             </svg>
           </form>
         </div>
-        <button className="text-black font-bold my-3 mx-1 hover:bg-black hover:text-white transition ease-out duration-500 border-soild border-2 border-black rounded-full  w-12 h-12 ">
-          <Link to={"/auth"}>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 mx-auto">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-            </svg>
-          </Link></button>
+        <button onClick={() => Signout()} className="text-black font-bold my-3 mx-1 hover:bg-black hover:text-white transition ease-out duration-500 border-soild border-2 border-black rounded-full  w-12 h-12 ">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="h-6 w-6 mx-auto">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+          </svg>
+
+        </button>
         <button className="text-black font-bold my-3 hover:bg-black hover:text-white transition ease-out duration-500 border-soild border-2 border-black rounded-full w-12 h-12 ">
           <Link to={"/cart"}>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -49,4 +53,4 @@ const Header = (props: Props) => {
   )
 }
 
-export default Header
+export default HeaderUser

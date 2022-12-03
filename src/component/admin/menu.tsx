@@ -8,35 +8,37 @@ const MenuAdmin = (props: Props) => {
         <Menu style={{ height: "100%" }}>
             <Menu.Item icon={<DashboardOutlined />}>
                 <Link to={"/admin"} />
-                Thống kê hoạt động
+                Dashboad
             </Menu.Item>
             <Menu.SubMenu title="Products">
                 <Menu.Item icon={<ProfileOutlined />}>
                     <Link to={"/admin/products"} />
-                    Danh sách sản phẩm
+                    Product list
                 </Menu.Item>
                 <Menu.Item icon={<PlusOutlined />}>
                     <Link to={"/admin/products/add"} />
-                    Thêm sản phẩm
+                    Add
                 </Menu.Item>
             </Menu.SubMenu>
             <Menu.SubMenu title="Categories">
                 <Menu.Item icon={<ProfileOutlined />}>
                     <Link to={"/admin/products"} />
-                    Danh sách danh mục
+                    Category list
                 </Menu.Item>
                 <Menu.Item icon={<PlusOutlined />}>
                     <Link to={"/admin/products/add"} />
-                    Thêm danh mục
+                    Add
                 </Menu.Item>
             </Menu.SubMenu>
             <Menu.SubMenu title="Users">
                 <Menu.Item icon={<ProfileOutlined />}>
                     <Link to={"/admin/products"} />
-                    Danh sách người dùng
+                    Account list
                 </Menu.Item>
             </Menu.SubMenu>
-
+            <Menu.Item title="Home page">
+                <Link to={"/"}>Home page</Link>
+            </Menu.Item>
         </Menu>
     )
 }

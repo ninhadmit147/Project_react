@@ -23,15 +23,15 @@
       "rating": "1"
     },
     {
-      "name": "Who that pokemon update",
-      "price": 22,
-      "sale": 12,
-      "amount": 2312,
-      "category": 2,
-      "description": "3232323",
-      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2F149390835_429104058413843_4271989283289411014_n.jpg?alt=media&token=026fcffb-94ab-424a-b892-2e9b4027aea7",
-      "rate": 1,
-      "id": 3
+      "name": "Gà không lối thoát 2",
+      "price": 3,
+      "sale": 1,
+      "amount": 1,
+      "category": 3,
+      "description": "cxzxvzaczcasdasdasczxc",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2F120048981_2737647816472537_4037150897983752127_n.jpg?alt=media&token=b3ed0be3-fd9b-49dd-8883-363916bd945c",
+      "rating": 1,
+      "id": 4
     }
   ],
   "categories": [
@@ -50,10 +50,20 @@
   ],
   "users": [
     {
-      "id": 1,
+      "email": "admin147@gmail.com",
+      "password": "$2a$10$ASodKrM9ST6MMlU/5YPnVuAMf.au9nd7bZ6NR4jhCEhnLLZZtgxiu",
       "username": "admin",
-      "email": "ninhxz147",
-      "password": "admit147"
+      "rePassword": "admit147",
+      "role": 1,
+      "id": 1
+    },
+    {
+      "email": "user147@gmail.com",
+      "password": "$2a$10$VqzHR53EluipL0jxkqfRruWbW6vgO/yvvOQ3..wi/mricFhqxoehq",
+      "username": "user1",
+      "rePassword": "admit147",
+      "role": 0,
+      "id": 2
     }
   ]
 }

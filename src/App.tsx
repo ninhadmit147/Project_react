@@ -10,10 +10,9 @@ import Signin from './component/auth/signin'
 import Signup from './component/auth/signup'
 import ProductEdit from './component/admin/product/product_edit'
 import Auth from './page/auth'
+import PrivateAdmin from './page/privateAdmin'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <Routes>
       <Route path='/' element={<HomePage />}>
@@ -22,7 +21,7 @@ function App() {
         <Route path='products' element={<h1>List</h1>} />
       </Route>
 
-      <Route path='/admin' element={<Admin />}>
+      <Route path='/admin' element={<PrivateAdmin><Admin /></PrivateAdmin>}>
         <Route path='products' element={<ProductList />} />
         <Route path='products/add' element={<ProductAdd />} />
         <Route path='products/:id/edit' element={<ProductEdit />} />

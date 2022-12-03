@@ -1,11 +1,32 @@
-import { Button, Form, Input } from 'antd';
-import { Link } from 'react-router-dom';
+import { Button, Form, Input, message } from 'antd';
+import { Link, useNavigate } from 'react-router-dom';
+import { IAuth } from '../../interface/auth';
+import { useSignInMutation } from '../../service/auth';
 
 type Props = {}
 
 const Signin = (props: Props) => {
+    const [signIn, { isLoading, isError }] = useSignInMutation()
+    const navigate = useNavigate()
     const onFinish = (values: any) => {
-        console.log('Success:', values);
+        console.log(values);
+
+        signIn(values).unwrap().then((response: any) => {
+            console.log(response);
+            localStorage.setItem("user", JSON.stringify(response))
+            console.log(localStorage.getItem("user"));
+            if (isLoading) {
+                message.loading("Loading ...")
+            }
+            if (isError) {
+                message.error("Signin Failed !")
+            }
+            else {
+                navigate("/admin")
+            }
+
+        })
+
     };
 
     const onFinishFailed = (errorInfo: any) => {
@@ -21,9 +42,9 @@ const Signin = (props: Props) => {
             <h1 className='text-2xl text-center my-10 font-bold'>Signin</h1>
             <Form.Item
                 className='font-semibold'
-                label="Username"
-                name="username"
-                rules={[{ required: true, message: 'Please input your username!' }]}
+                label="Email"
+                name="email"
+                rules={[{ required: true, message: 'Please input your email!' }]}
             >
                 <Input />
             </Form.Item>

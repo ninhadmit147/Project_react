@@ -1,11 +1,17 @@
-import { Button, Form, Input } from 'antd';
-import { Link } from 'react-router-dom';
+import { Button, Form, Input, message } from 'antd';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSignUpMutation } from '../../service/auth';
 
-type Props = {}
-
-const Signup = (props: Props) => {
+const Signup = () => {
+    const [signUp] = useSignUpMutation()
+    const navigate = useNavigate()
     const onFinish = (values: any) => {
-        console.log('Success:', values);
+        const user = { ...values, role: 0 }
+        signUp(user)
+        setTimeout(() => {
+            message.success("Create successful accoount")
+            navigate("/auth")
+        }, 2000)
     };
 
     const onFinishFailed = (errorInfo: any) => {
