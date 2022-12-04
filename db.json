@@ -34,13 +34,13 @@
       "id": 4
     },
     {
-      "name": "Who that pokemon update 1",
+      "name": "Who that pokemon update 5",
       "price": 5,
       "sale": 2,
       "amount": 1,
       "category": 2,
       "description": "hgvh ngvhb nvb ngb vngvb gvhb nvb vhb nghb mvjnvhb mjnb gvvvh j drcncyh tnc yhtnbg yh",
-      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2F149390835_429104058413843_4271989283289411014_n.jpg?alt=media&token=38c63f78-ec47-4409-83c4-a957816ee65e",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2F240670150_1902599323250545_6515420030583234125_n.jpg?alt=media&token=8e65100c-656d-4e67-b2de-53ba9765d7e7",
       "rate": 1,
       "id": 5
     }
@@ -75,6 +75,14 @@
       "rePassword": "admit147",
       "role": 0,
       "id": 2
+    },
+    {
+      "email": "admin147new@gmail.com",
+      "password": "$2a$10$KbAZpb0XSXHwl1B7rhOPLuMwB0cBl235QVKJDp8dlB.gT1a1UGMAy",
+      "username": "acc",
+      "rePassword": "admit147",
+      "role": 0,
+      "id": 3
     }
   ]
 }

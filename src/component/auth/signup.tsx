@@ -3,15 +3,25 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useSignUpMutation } from '../../service/auth';
 
 const Signup = () => {
-    const [signUp] = useSignUpMutation()
+    const [signUp, { isError }] = useSignUpMutation()
+    console.log(isError);
+
     const navigate = useNavigate()
     const onFinish = (values: any) => {
         const user = { ...values, role: 0 }
         signUp(user)
-        setTimeout(() => {
-            message.success("Create successful accoount")
-            navigate("/auth")
-        }, 2000)
+        if (isError === false) {
+            message.error("Failed")
+        }
+        if (isError === true) {
+            setTimeout(() => {
+                message.success("Create successful accoount")
+                navigate("/auth")
+            }, 2000)
+        }
+
+
+
     };
 
     const onFinishFailed = (errorInfo: any) => {
