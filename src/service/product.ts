@@ -25,9 +25,15 @@ export const productApi = createApi({
             }),
             providesTags: ['Product']
         }),
-        searchProd: builder.query<IProduct, void>({
-            query: (id) => ({
-                url: `/products/` + id,
+        searchProd: builder.query<IProduct[], void>({
+            query: (data) => ({
+                url: `/products?q=` + data,
+            }),
+            providesTags: ['Product']
+        }),
+        sortsProd: builder.query<IProduct[], void>({
+            query: (data) => ({
+                url: `/products?_sort=price&_order=` + data,
             }),
             providesTags: ['Product']
         }),
@@ -64,4 +70,5 @@ export const {
     useEditProductMutation,
     useRemoveProductMutation,
     useSearchProdQuery,
+    useSortsProdQuery
 } = productApi;

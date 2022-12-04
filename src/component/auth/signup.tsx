@@ -8,7 +8,12 @@ const Signup = () => {
 
     const navigate = useNavigate()
     const onFinish = (values: any) => {
-        const user = { ...values, role: 0 }
+        if (values.password !== values.rePassword) {
+            message.error("Password confirmation failed")
+        }
+        const { rePassword, ...data } = values
+        console.log(data);
+        const user = { ...data, role: 0 }
         signUp(user)
         if (isError === false) {
             message.error("Failed")

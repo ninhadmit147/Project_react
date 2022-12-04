@@ -18,14 +18,13 @@ const Signin = (props: Props) => {
             if (isLoading) {
                 message.loading("Loading ...")
             }
-            if (isError) {
-                message.error("Signin Failed !")
-            }
             else {
                 navigate("/admin")
             }
-
         })
+        if (isError === false) {
+            message.error("Signin Failed !")
+        }
 
     };
 

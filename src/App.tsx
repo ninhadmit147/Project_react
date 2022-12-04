@@ -11,6 +11,8 @@ import Signup from './component/auth/signup'
 import ProductEdit from './component/admin/product/product_edit'
 import Auth from './page/auth'
 import PrivateAdmin from './page/privateAdmin'
+import SearchProd from './component/usser/product/search_product'
+import ListProducts from './component/usser/product/ListProducts'
 
 function App() {
   return (
@@ -18,7 +20,8 @@ function App() {
       <Route path='/' element={<HomePage />}>
         <Route index element={<AllProducts />} />
         <Route path='product/:id/detail' element={<DetailProduct />} />
-        <Route path='products' element={<h1>List</h1>} />
+        <Route path='products/:search/search' element={<SearchProd />} />
+        <Route path='products' element={<ListProducts />} />
       </Route>
 
       <Route path='/admin' element={<PrivateAdmin><Admin /></PrivateAdmin>}>
