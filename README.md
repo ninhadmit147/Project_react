@@ -23,3 +23,12 @@ Start project
 ```
 npm run dev
 ```
+
+## Go to Admin
+
+```
+Admin account
+-email: admin147@gmail.com
+-password: admit147
+
+```
