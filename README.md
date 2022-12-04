@@ -1,5 +1,9 @@
 # Wellcome to my project
 
+## Foreword
+
+Welcome to my project. This is a simple React project, using libraries like Ant design, Redux toolkit. Include fake API using JSON server to create single page application.
+
 ## Getting started
 
 Install Node module
