@@ -1,7 +1,7 @@
 import { PlusOutlined } from '@ant-design/icons';
 import { Button, Form, Input, InputNumber, message, Select, Upload } from 'antd';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { storage } from '../../../app/firebase';
 import { useGetCategoriesQuery } from '../../../service/category';
@@ -11,18 +11,27 @@ const ProductEdit = () => {
     const { id } = useParams()
     console.log(id);
     const [form] = Form.useForm()
+    const { data: product, isLoading, isError } = useGetProductQuery(id as any)
+    useEffect(() => {
+        //Value form
+        form.setFieldsValue({
+            name: product?.name,
+            price: product?.price,
+            sale: product?.sale,
+            amount: product?.amount,
+            category: product?.category,
+            description: product?.description
+        })
+    }, [product])
 
     const { data: cate = [] } = useGetCategoriesQuery()
-    console.log(cate);
     const getCate = () => {
         return cate.map((item) => ({
             value: item.id,
             label: item.name
         }))
     }
-    const { data: product, isLoading, isError } = useGetProductQuery(id as any)
-
-
+    //Upload img
     const [imgUpload, setImgUpload] = useState<File>()
     const [downloadURL, setDownloadURL] = useState('')
     const [progressUpload, setProgressUpload] = useState(0)
@@ -59,20 +68,6 @@ const ProductEdit = () => {
     }
     //upload file
 
-    //Value form
-    form.setFieldsValue({
-        name: product?.name,
-        price: product?.price,
-        sale: product?.sale,
-        amount: product?.amount,
-        category: product?.category,
-        description: product?.description
-    })
-
-    const handleChange = (value: any) => {
-        console.log(value);
-
-    }
 
     //Update
     const [updateProd] = useEditProductMutation()
@@ -109,7 +104,6 @@ const ProductEdit = () => {
             </Form.Item>
             <Form.Item label="Category" name="category" rules={[{ required: true, message: "Do not leave blank" }]}>
                 <Select
-                    onChange={handleChange}
                     options={getCate()}
                 />
             </Form.Item>

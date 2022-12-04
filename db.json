@@ -32,6 +32,17 @@
       "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2F120048981_2737647816472537_4037150897983752127_n.jpg?alt=media&token=b3ed0be3-fd9b-49dd-8883-363916bd945c",
       "rating": 1,
       "id": 4
+    },
+    {
+      "name": "Who that pokemon update 1",
+      "price": 5,
+      "sale": 2,
+      "amount": 1,
+      "category": 2,
+      "description": "hgvh ngvhb nvb ngb vngvb gvhb nvb vhb nghb mvjnvhb mjnb gvvvh j drcncyh tnc yhtnbg yh",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2F149390835_429104058413843_4271989283289411014_n.jpg?alt=media&token=38c63f78-ec47-4409-83c4-a957816ee65e",
+      "rate": 1,
+      "id": 5
     }
   ],
   "categories": [
