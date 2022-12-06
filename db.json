@@ -1,15 +1,15 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Product A",
-      "image": "https://res.cloudinary.com/thisisninh/image/upload/v1668090299/news_ecjn4b.png",
+      "name": "Product A update",
       "price": 300,
       "sale": 259,
-      "categories": 1,
-      "description": "Description",
       "amount": 1,
-      "rating": "1"
+      "category": 1,
+      "description": "Description",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2F250670369_575630106984639_2209342809772331243_n.jpg?alt=media&token=f01a5d92-57a6-4f2c-8523-d185af89a399",
+      "rate": 1,
+      "id": 1
     },
     {
       "id": 2,
@@ -23,26 +23,15 @@
       "rating": "1"
     },
     {
-      "name": "Gà không lối thoát 2",
+      "name": "Gà update",
       "price": 3,
       "sale": 1,
       "amount": 1,
       "category": 3,
       "description": "cxzxvzaczcasdasdasczxc",
-      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2F120048981_2737647816472537_4037150897983752127_n.jpg?alt=media&token=b3ed0be3-fd9b-49dd-8883-363916bd945c",
-      "rating": 1,
-      "id": 4
-    },
-    {
-      "name": "Who that pokemon update 5",
-      "price": 5,
-      "sale": 2,
-      "amount": 1,
-      "category": 2,
-      "description": "hgvh ngvhb nvb ngb vngvb gvhb nvb vhb nghb mvjnvhb mjnb gvvvh j drcncyh tnc yhtnbg yh",
-      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2F240670150_1902599323250545_6515420030583234125_n.jpg?alt=media&token=8e65100c-656d-4e67-b2de-53ba9765d7e7",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2F244469152_403267531528797_888355892361882281_n.jpg?alt=media&token=b4965a1d-5582-4c49-b7d7-652e5697418a",
       "rate": 1,
-      "id": 5
+      "id": 4
     }
   ],
   "categories": [
@@ -77,12 +66,18 @@
       "id": 2
     },
     {
-      "email": "admin147new@gmail.com",
-      "password": "$2a$10$KbAZpb0XSXHwl1B7rhOPLuMwB0cBl235QVKJDp8dlB.gT1a1UGMAy",
-      "username": "acc",
-      "rePassword": "admit147",
+      "email": "adminc147@gmail.com",
+      "password": "$2a$10$0d6yh4FWe2hCrqapr/QlaOSNEqKT5apSl.WXRWqsnNoqcggyeZBpq",
+      "username": "admi",
       "role": 0,
       "id": 3
+    },
+    {
+      "email": "admccin147@gmail.com",
+      "password": "$2a$10$enh7XOshI2E0m5OxcBvOIe8xDniF59it10YdnzcP4yBAg3kd7dTTG",
+      "username": "admin147@gmail.com",
+      "role": 0,
+      "id": 4
     }
   ]
 }

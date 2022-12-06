@@ -6,7 +6,7 @@ import { useSignInMutation } from '../../service/auth';
 type Props = {}
 
 const Signin = (props: Props) => {
-    const [signIn, { isLoading, isError }] = useSignInMutation()
+    const [signIn, { isError }] = useSignInMutation()
     const navigate = useNavigate()
     const onFinish = (values: any) => {
         console.log(values);
@@ -15,15 +15,13 @@ const Signin = (props: Props) => {
             console.log(response);
             localStorage.setItem("user", JSON.stringify(response))
             console.log(localStorage.getItem("user"));
-            if (isLoading) {
-                message.loading("Loading ...")
-            }
-            else {
-                navigate("/admin")
-            }
+            navigate("/admin")
         })
-        if (isError === false) {
+        if (isError) {
             message.error("Signin Failed !")
+        }
+        else {
+            message.success("Signin success !")
         }
 
     };

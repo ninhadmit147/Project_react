@@ -1,31 +1,33 @@
 import { Button, Form, Input, message } from 'antd';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSignUpMutation } from '../../service/auth';
 
 const Signup = () => {
+    const [err, setErr] = useState()
     const [signUp, { isError }] = useSignUpMutation()
     console.log(isError);
-
     const navigate = useNavigate()
     const onFinish = (values: any) => {
         if (values.password !== values.rePassword) {
             message.error("Password confirmation failed")
         }
-        const { rePassword, ...data } = values
-        console.log(data);
-        const user = { ...data, role: 0 }
-        signUp(user)
-        if (isError === false) {
-            message.error("Failed")
-        }
-        if (isError === true) {
-            setTimeout(() => {
-                message.success("Create successful accoount")
-                navigate("/auth")
-            }, 2000)
-        }
+        else {
+            const { rePassword, ...data } = values
+            console.log(data);
+            const user = { ...data, role: 0 }
+            signUp(user)
+            if (!isError) {
+                message.error("Failed")
+            }
+            else {
+                setTimeout(() => {
+                    message.success("Create successful accoount")
+                    navigate("/auth")
+                }, 2000)
+            }
 
-
+        }
 
     };
 

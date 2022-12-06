@@ -65,7 +65,7 @@ const ListProducts = (props: Props) => {
                             {products.map((item: any) => (
                                 <Link to={`/product/${item.id}/detail`}>
                                     <div key={item.id} className="bg-gray-100 transition group ease-out duration-500 hover:shadow-md hover:border-black border-2 border-soild rounded-md">
-                                        <img src={item.image} alt="" className="w-5/6 mx-auto mt-8 h-[300px]  ease-in duration-300 transform  hover:-translate-y-12" />
+                                        <img src={item.image} alt="" className="w-5/6 mx-auto mt-8 h-[300px] ease-in duration-300 transform  hover:-translate-y-8" />
                                         <h1 className="text-2xl font-semibold text-center">{item.name}</h1>
                                         <p className="group-hover:text-red-900 text-1xl text-center underline">{item.sale} $</p>
                                         <div className="mx-10 justify-between flex my-5">

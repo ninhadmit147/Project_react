@@ -1,14 +1,22 @@
 
+import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
 
 type Props = {}
 
 const HeaderUser = (props: Props) => {
   const navidate = useNavigate()
+  const { register, handleSubmit } = useForm()
+  const searchForm = (values: any) => {
+    const dataSearch = values.search
+    console.log(dataSearch);
+    navidate(`/products/${dataSearch}/search`)
+  }
   const Signout = () => {
     localStorage.removeItem("user")
     navidate("/auth")
   }
+
   return (
     <div className="header w-full justify-between px-10 flex ">
       <div className="p-2 flex">
@@ -28,8 +36,8 @@ const HeaderUser = (props: Props) => {
           </ul>
         </nav>
         <div className="mx-auto max-w-md my-3">
-          <form className="relative mx-auto w-max">
-            <input type="search" className="peer cursor-pointer relative z-10 h-12 w-12 rounded-full border-2 border-black bg-transparent pl-12 ease-linear duration-300 outline-none focus:w-full focus:cursor-text focus:border-black focus:pl-16 focus:pr-4" />
+          <form onSubmit={handleSubmit(searchForm)} className="relative mx-auto w-max">
+            <input type="search" {...register("search")} className="peer cursor-pointer relative z-10 h-12 w-12 rounded-full border-2 border-black bg-transparent pl-12 ease-linear duration-300 outline-none focus:w-full focus:cursor-text focus:border-black focus:pl-16 focus:pr-4" />
             <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-black peer-focus:stroke-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
