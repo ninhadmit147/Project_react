@@ -1,8 +1,6 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { useGetProductsQuery } from '../../../service/product'
 import Banner from '../banner'
-import Slider from '../slider'
 
 
 const AllProducts = () => {

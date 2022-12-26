@@ -1,8 +1,5 @@
-import React from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { IProduct } from '../../../interface/product'
-import { useGetProductsQuery, useSearchProdQuery } from '../../../service/product'
-import Slider from '../slider'
+import { useSearchProdQuery } from '../../../service/product'
 
 
 const SearchProd = () => {

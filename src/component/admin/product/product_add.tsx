@@ -1,15 +1,22 @@
 import { PlusOutlined } from '@ant-design/icons';
-import { Button, DatePicker, Form, Input, InputNumber, message, Select, Upload, Alert } from 'antd';
-import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+import { Button, Form, Input, InputNumber, message, Select, Upload } from 'antd';
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { useState } from 'react';
-import { Navigate } from 'react-router-dom';
 import { storage } from '../../../app/firebase';
 import { useGetCategoriesQuery } from '../../../service/category';
 import { useAddProductMutation } from '../../../service/product';
+import { useGetSizesQuery } from '../../../service/size';
 
 const { TextArea } = Input;
 const ProductAdd = () => {
     const { data: cate = [] } = useGetCategoriesQuery()
+    const { data: size = [] } = useGetSizesQuery()
+    const getSize = () => {
+        return size.map((item) => ({
+            value: item.id,
+            label: item.name
+        }))
+    }
     const getCate = () => {
         return cate.map((item) => ({
             value: item.id,
@@ -91,6 +98,12 @@ const ProductAdd = () => {
                     <Select
                         onChange={handleChange}
                         options={getCate()}
+                    />
+                </Form.Item>
+                <Form.Item label="Size" name="size" rules={[{ required: true, message: "Do not leave blank" }]}>
+                    <Select
+                        onChange={handleChange}
+                        options={getSize()}
                     />
                 </Form.Item>
                 <Form.Item label="Description" name="description" rules={[{ required: true, message: "Do not leave blank" }]}>

@@ -1,40 +1,24 @@
 import { Select } from 'antd'
-import { Link, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useGetCategoriesQuery } from '../../../service/category'
-import { useGetProductsQuery, useSortsProdQuery } from '../../../service/product'
+import { useSortsProdQuery } from '../../../service/product'
 
 type Props = {}
 
-const ListProducts = (props: Props) => {
-    const { data: products = [], isLoading, isError } = useGetProductsQuery()
+const Sort = (props: Props) => {
+    const { datasort } = useParams()
+    console.log(datasort);
+
+    const { data: products = [], isLoading, isError } = useSortsProdQuery(datasort as any)
     const navigate = useNavigate()
-    const data: string = "desc"
     const { data: cate = [] } = useGetCategoriesQuery()
     const handleChange = (value: any) => {
         // console.log(value);
         navigate(`/products/${value}/sort`)
 
     }
-    const btnSort = (dataSort: any) => {
-        console.log(dataSort);
 
-        const { data: products = [] } = useSortsProdQuery(dataSort)
-        console.log(products);
-    }
-    if (isLoading) {
-        return (
-            <div>
-                Loading ...
-            </div>
-        )
-    }
-    if (isError) {
-        return (
-            <div>
-                Error
-            </div>
-        )
-    }
     return (
         <div className="min-h-screen">
             <div className="bg-gradient-to-r from-green-400 to-blue-500 h-56 my-10">
@@ -103,13 +87,13 @@ const ListProducts = (props: Props) => {
                             ))}
                         </div>
                         {/* <h1 className="text-2xl ">
-                            Gender
-                        </h1>
-                        <div className="mx-2 my-5">
-                            <input type="radio" name="gender" /> Men
-                            <br />
-                            <input type="radio" name="gender" /> Women
-                        </div> */}
+                        Gender
+                    </h1>
+                    <div className="mx-2 my-5">
+                        <input type="radio" name="gender" /> Men
+                        <br />
+                        <input type="radio" name="gender" /> Women
+                    </div> */}
                     </div>
                     {/* Category */}
                 </div>
@@ -118,4 +102,4 @@ const ListProducts = (props: Props) => {
     )
 }
 
-export default ListProducts
+export default Sort

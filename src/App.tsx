@@ -13,6 +13,7 @@ import Auth from './page/auth'
 import PrivateAdmin from './page/privateAdmin'
 import SearchProd from './component/usser/product/search_product'
 import ListProducts from './component/usser/product/ListProducts'
+import Sort from './component/usser/product/sortProduct'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route index element={<AllProducts />} />
         <Route path='product/:id/detail' element={<DetailProduct />} />
         <Route path='products/:search/search' element={<SearchProd />} />
+        <Route path='products/:datasort/sort' element={<Sort />} />
         <Route path='products' element={<ListProducts />} />
       </Route>
 

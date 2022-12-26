@@ -1,6 +1,6 @@
+import { message } from 'antd'
 import React from 'react'
-import { Navigate, useParams } from 'react-router-dom'
-import { IAuth } from '../interface/auth'
+import { Navigate } from 'react-router-dom'
 
 type PrivateProps = {
     children: React.ReactElement
@@ -15,9 +15,14 @@ const PrivateAdmin = ({ children }: PrivateProps) => {
         const role = dataUser.user.role
 
         if (role !== 1) {
-            return <Navigate to="/" />
+            message.success("Hello " + dataUser.user.username)
+            return (
+                <Navigate to="/" />
+
+            )
         }
         else {
+            message.success("Hello " + dataUser.user.username)
             return children
         }
     }

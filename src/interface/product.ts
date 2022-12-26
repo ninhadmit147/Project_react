@@ -6,7 +6,7 @@ export interface IProduct {
     price: number,
     sale: number,
     description: string,
-    amount: number,
-    rating: number
+    size: number,
+    amount: number
 
 }

@@ -1,6 +1,5 @@
 import { Button, Form, Input, message } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
-import { IAuth } from '../../interface/auth';
 import { useSignInMutation } from '../../service/auth';
 
 type Props = {}
@@ -8,32 +7,25 @@ type Props = {}
 const Signin = (props: Props) => {
     const [signIn, { isError }] = useSignInMutation()
     const navigate = useNavigate()
-    const onFinish = (values: any) => {
+    const onFinish = async (values: any) => {
         console.log(values);
-
-        signIn(values).unwrap().then((response: any) => {
+        await signIn(values).unwrap().then((response: any) => {
             console.log(response);
             localStorage.setItem("user", JSON.stringify(response))
             console.log(localStorage.getItem("user"));
             navigate("/admin")
         })
-        if (isError) {
-            message.error("Signin Failed !")
-        }
-        else {
-            message.success("Signin success !")
-        }
-
     };
+    if (isError) {
+        message.error("Signin Failed !")
+        console.log("error");
+    }
 
-    const onFinishFailed = (errorInfo: any) => {
-        console.log('Failed:', errorInfo);
-    };
+
     return (
         <Form className="w-1/3 border rounded-md mx-auto p-20 bg-white"
             name="basic"
             onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
             autoComplete="off"
         >
             <h1 className='text-2xl text-center my-10 font-bold'>Signin</h1>

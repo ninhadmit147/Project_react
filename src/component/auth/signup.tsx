@@ -1,14 +1,12 @@
 import { Button, Form, Input, message } from 'antd';
-import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSignUpMutation } from '../../service/auth';
 
 const Signup = () => {
-    const [err, setErr] = useState()
     const [signUp, { isError }] = useSignUpMutation()
     console.log(isError);
     const navigate = useNavigate()
-    const onFinish = (values: any) => {
+    const onFinish = async (values: any) => {
         if (values.password !== values.rePassword) {
             message.error("Password confirmation failed")
         }
@@ -16,20 +14,19 @@ const Signup = () => {
             const { rePassword, ...data } = values
             console.log(data);
             const user = { ...data, role: 0 }
-            signUp(user)
-            if (!isError) {
-                message.error("Failed")
-            }
-            else {
-                setTimeout(() => {
+            await signUp(user)
+            setTimeout(() => {
+                if (!isError) {
+                    message.error("Failed")
+                } else {
                     message.success("Create successful accoount")
                     navigate("/auth")
-                }, 2000)
-            }
-
+                }
+            }, 2000)
         }
+    }
 
-    };
+
 
     const onFinishFailed = (errorInfo: any) => {
         console.log('Failed:', errorInfo);

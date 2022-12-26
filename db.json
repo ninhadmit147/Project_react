@@ -1,37 +1,15 @@
 {
   "products": [
     {
-      "name": "Product A update",
-      "price": 300,
-      "sale": 259,
-      "amount": 1,
+      "name": "Áo Hoodie Totoro",
+      "price": 40,
+      "sale": 20,
+      "amount": 100,
       "category": 1,
-      "description": "Description",
-      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2F250670369_575630106984639_2209342809772331243_n.jpg?alt=media&token=f01a5d92-57a6-4f2c-8523-d185af89a399",
-      "rate": 1,
+      "size": 4,
+      "description": "Thông tin sản phẩm Áo Hoodie Trùm Cuối nam nữ form rộng\n- Hàng chuẩn Tshirt Holic sản xuất, với những mẫu áo Manga, Comic bá cháy.\n- Chất liệu: Nỉ Bông 100%, co giãn 2 chiều, vải mềm, vải mịn, thoáng mát, không xù lông.\n- Đường may chuẩn chỉnh, tỉ mỉ, chắc chắn.\n- Họa tiết được in bằng bằng công nghệ Pet Kĩ thuật số, rất chi tiết và bền màu.\n- Thiết kế với những mẫu in độc đáo chỉ có tại Trùm Cuôi!!!",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2Fsg-11134201-22100-2ssb54a1zuiv31.jfif?alt=media&token=0de2e6af-4cbe-4768-b112-22ab104ceddb",
       "id": 1
-    },
-    {
-      "id": 2,
-      "name": "Product B",
-      "image": "https://res.cloudinary.com/thisisninh/image/upload/v1668090581/product_wzvorr.png",
-      "price": 400,
-      "sale": 370,
-      "categories": 1,
-      "description": "Description",
-      "amount": 1,
-      "rating": "1"
-    },
-    {
-      "name": "Gà update",
-      "price": 3,
-      "sale": 1,
-      "amount": 1,
-      "category": 3,
-      "description": "cxzxvzaczcasdasdasczxc",
-      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2F244469152_403267531528797_888355892361882281_n.jpg?alt=media&token=b4965a1d-5582-4c49-b7d7-652e5697418a",
-      "rate": 1,
-      "id": 4
     }
   ],
   "categories": [
@@ -46,6 +24,24 @@
     {
       "id": 3,
       "name": "Unisex"
+    }
+  ],
+  "size": [
+    {
+      "id": 1,
+      "name": "S"
+    },
+    {
+      "id": 2,
+      "name": "M"
+    },
+    {
+      "id": 3,
+      "name": "L"
+    },
+    {
+      "id": 4,
+      "name": "XL"
     }
   ],
   "users": [
@@ -78,6 +74,13 @@
       "username": "admin147@gmail.com",
       "role": 0,
       "id": 4
+    },
+    {
+      "email": "admin147new@gmail.com",
+      "password": "$2a$10$UHVSPExtxbyhq7c.vwWsLuo6bIkhB6iBofqyYQKtIfuiPTf0OZGHa",
+      "username": "acc",
+      "role": 0,
+      "id": 5
     }
   ]
 }

@@ -1,5 +1,4 @@
-import { Table, Button, message, Space, Popconfirm } from 'antd'
-import { Link } from 'react-router-dom'
+import { Button, message, Popconfirm, Table } from 'antd'
 import { IProduct } from '../../../interface/product'
 import { useGetProductsQuery, useRemoveProductMutation } from '../../../service/product'
 const { Column } = Table
@@ -14,7 +13,7 @@ const ProductList = () => {
             image: item.image,
             price: item.price,
             sale: item.sale,
-            rate: item.rating,
+            size: item.size,
             amount: item.amount
         }))
 
@@ -29,8 +28,8 @@ const ProductList = () => {
                 <Column title="Name" dataIndex="name" key="name" />
                 <Column title="Price" dataIndex="price" key="price" />
                 <Column title="Sale" dataIndex="sale" key="sale" />
-                <Column title="Rate" dataIndex="rate" key="rate" />
-                <Column title="Amount" dataIndex={"amount"} key="amount" />
+                <Column title="Amount" dataIndex="amount" key="amount" />
+                <Column title="Size" dataIndex={"size"} key="size" />
                 <Column title="Action" key="action" render={
                     (product) => {
                         console.log(product);

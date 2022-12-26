@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { storage } from '../../../app/firebase';
 import { useGetCategoriesQuery } from '../../../service/category';
 import { useEditProductMutation, useGetProductQuery } from '../../../service/product';
+import { useGetSizesQuery } from '../../../service/size';
 const { TextArea } = Input;
 const ProductEdit = () => {
     const { id } = useParams()
@@ -17,14 +18,23 @@ const ProductEdit = () => {
         form.setFieldsValue({
             name: product?.name,
             price: product?.price,
+            image: product?.image,
             sale: product?.sale,
-            amount: product?.amount,
+            size: product?.size,
             category: product?.category,
+            amount: product?.amount,
             description: product?.description
         })
     }, [product])
 
     const { data: cate = [] } = useGetCategoriesQuery()
+    const { data: size = [] } = useGetSizesQuery()
+    const getSize = () => {
+        return size.map((item) => ({
+            value: item.id,
+            label: item.name
+        }))
+    }
     const getCate = () => {
         return cate.map((item) => ({
             value: item.id,
@@ -75,11 +85,11 @@ const ProductEdit = () => {
     const submitForm = (value: any) => {
         console.log(value);
         if (!imgUpload) {
-            const productupdate = { ...value, image: product?.image, rate: 1, id: id };
+            const productupdate = { ...value, image: product?.image, id: id };
             updateProd(productupdate)
         }
         else {
-            const productupdate = { ...value, image: downloadURL, rate: 1, id: id };
+            const productupdate = { ...value, image: downloadURL, id: id };
             updateProd(productupdate)
         }
         setTimeout(() => {
@@ -88,43 +98,53 @@ const ProductEdit = () => {
 
     }
     return (
-        <Form form={form} className='w-1/2 mx-auto' onFinish={submitForm}>
-            <h1 className='text-center text-2xl my-5'>Update product</h1>
-            <Form.Item label="Prouduct name" name="name" rules={[{ required: true, message: "Do not leave blank" }]}>
-                <Input />
-            </Form.Item>
-            <Form.Item label="Price" name="price" rules={[{ required: true, message: "Do not leave blank" }]}>
-                <InputNumber />
-            </Form.Item>
-            <Form.Item label="Sale" name="sale" rules={[{ required: true, message: "Do not leave blank" }]}>
-                <InputNumber />
-            </Form.Item>
-            <Form.Item label="Amount" name="amount" rules={[{ required: true, message: "Do not leave blank" }]}>
-                <InputNumber />
-            </Form.Item>
-            <Form.Item label="Category" name="category" rules={[{ required: true, message: "Do not leave blank" }]}>
-                <Select
-                    options={getCate()}
-                />
-            </Form.Item>
-            <Form.Item label="Description" name="description" rules={[{ required: true, message: "Do not leave blank" }]}>
-                <TextArea rows={4} />
-            </Form.Item>
-            <Form.Item label="Upload" valuePropName="fileList" rules={[{ required: true, message: "Do not leave blank" }]}>
-                <Upload
-                    listType="picture-card"
-                    onChange={onChangeImg}
-                >
-                    <div>
-                        <PlusOutlined />
-                        <div style={{ marginTop: 8 }}>Upload</div>
-                    </div>
-                </Upload>
-            </Form.Item>
-            <Form.Item label="Button">
-                <Button htmlType='submit'>Button</Button>
-            </Form.Item>
-        </Form>
+        <>
+            <Form form={form}
+                className='w-1/2 mx-auto'
+                onFinish={submitForm}
+            >
+                <h1 className='text-center text-2xl my-5'>Form add product</h1>
+                <Form.Item label="Prouduct name" name="name" rules={[{ required: true, message: "Do not leave blank" }]}>
+                    <Input />
+                </Form.Item>
+                <Form.Item label="Price" name="price" rules={[{ required: true, message: "Do not leave blank" }]}>
+                    <InputNumber />
+                </Form.Item>
+                <Form.Item label="Sale" name="sale" rules={[{ required: true, message: "Do not leave blank" }]}>
+                    <InputNumber />
+                </Form.Item>
+                <Form.Item label="Amount" name="amount" rules={[{ required: true, message: "Do not leave blank" }]}>
+                    <InputNumber />
+                </Form.Item>
+                <Form.Item label="Category" name="category" rules={[{ required: true, message: "Do not leave blank" }]}>
+                    <Select
+                        options={getCate()}
+                    />
+                </Form.Item>
+                <Form.Item label="Size" name="size" rules={[{ required: true, message: "Do not leave blank" }]}>
+                    <Select
+                        options={getSize()}
+                    />
+                </Form.Item>
+                <Form.Item label="Description" name="description" rules={[{ required: true, message: "Do not leave blank" }]}>
+                    <TextArea rows={4} />
+                </Form.Item>
+                <Form.Item label="Upload" valuePropName="fileList" rules={[{ required: true, message: "Do not leave blank" }]}>
+                    <Upload
+                        listType="picture-card"
+                        onChange={onChangeImg}
+                    >
+                        <div>
+                            <PlusOutlined />
+                            <div style={{ marginTop: 8 }}>Upload</div>
+                        </div>
+                    </Upload>
+                </Form.Item>
+                <Form.Item label="Button">
+                    <Button htmlType='submit' loading={isLoading}>Button</Button>
+                </Form.Item>
+            </Form>
+        </>
     )
 }
 
