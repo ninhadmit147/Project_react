@@ -16,7 +16,8 @@ const DetailProduct = (props: Props) => {
   const { data: category } = useGetCategoryQuery(cateId)
   const price: any = product?.price
   const sale: any = product?.sale
-  const percent: any = sale * 100 / price
+  const percent: any = 100 - (sale * 100 / price)
+  const saleoff = percent.toFixed()
 
   return (
     <div className="container mx-auto my-10">
@@ -37,7 +38,7 @@ const DetailProduct = (props: Props) => {
                 <div className="bg-gray-100 flex gap-1">
                   <p className='line-through text-gray-500 text-xl my-2 mx-4'>{product?.price}</p>
                   <p className='text-3xl my-1'>{product?.sale} $</p>
-                  <p className='font-normal text-sm bg-red-500 rounded-lg text-white p-1 h-7 my-2 ml-10'>{percent}% off</p>
+                  <p className='font-normal text-sm bg-red-500 rounded-lg text-white p-1 h-7 my-2 ml-10'>{saleoff}% off</p>
                 </div>
                 <p className='font-semibold my-3'>Category: <p className='font-normal'>{category?.name}</p></p>
                 <p className='font-semibold my-3'>Amount: <p className='font-normal'>{product?.amount}</p></p>
@@ -64,7 +65,7 @@ const DetailProduct = (props: Props) => {
           <div>
             {produts.map((item: any) => (
               <Link to={`product/${item.id}/detail`}>
-                <div className="bg-gray-100 transition p-5 group ease-out duration-500 hover:shadow-md hover:border-black border-2 border-soild rounded-md">
+                <div className="bg-gray-100 transition p-5 group ease-out duration-500 hover:shadow-md hover:border-black border-2 border-soild rounded-md my-1">
                   <img src={item.image} alt="" className="w-4/6 mx-auto mt-8 min-h-[200px]  ease-in duration-300 transform  hover:-translate-y-8" />
                   <h1 className="text-2xl font-semibold text-center">{item.name}</h1>
                   <p className="group-hover:text-red-900 text-1xl text-center underline">{item.sale} $</p>

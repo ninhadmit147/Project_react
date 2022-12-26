@@ -10,6 +10,66 @@
       "description": "Thông tin sản phẩm Áo Hoodie Trùm Cuối nam nữ form rộng\n- Hàng chuẩn Tshirt Holic sản xuất, với những mẫu áo Manga, Comic bá cháy.\n- Chất liệu: Nỉ Bông 100%, co giãn 2 chiều, vải mềm, vải mịn, thoáng mát, không xù lông.\n- Đường may chuẩn chỉnh, tỉ mỉ, chắc chắn.\n- Họa tiết được in bằng bằng công nghệ Pet Kĩ thuật số, rất chi tiết và bền màu.\n- Thiết kế với những mẫu in độc đáo chỉ có tại Trùm Cuôi!!!",
       "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2Fsg-11134201-22100-2ssb54a1zuiv31.jfif?alt=media&token=0de2e6af-4cbe-4768-b112-22ab104ceddb",
       "id": 1
+    },
+    {
+      "name": "Áo Sweater Totoro",
+      "price": 32,
+      "sale": 25,
+      "amount": 100,
+      "category": 2,
+      "size": 3,
+      "description": "Thông tin sản phẩm Áo Sweater Trùm Cuối nam nữ form rộng\n- Hàng chuẩn Tshirt Holic sản xuất, với những mẫu áo Manga, Comic bá cháy.\n- Chất liệu: thun Nỉ Bông 100%, co giãn 2 chiều, vải mềm, vải mịn, thoáng mát, không xù lông.\n- Đường may chuẩn chỉnh, tỉ mỉ, chắc chắn.\n- Họa tiết được in bằng bằng công nghệ Pet Kĩ thuật số, rất chi tiết và bền màu.\n- Thiết kế với những mẫu in độc đáo chỉ có tại Trùm Cuôi!!!",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2Fsg-11134201-22100-wdyyokmszuiv6e.jfif?alt=media&token=57888954-830a-4030-80a5-eea4c1d18672",
+      "rating": 1,
+      "id": 2
+    },
+    {
+      "name": "Áo Hoodie Mời Anh Cầm Tiền Em Unisex Trùm Cuối",
+      "price": 42,
+      "sale": 21,
+      "amount": 100,
+      "category": 3,
+      "size": 4,
+      "description": "Thông tin sản phẩm Áo  Hoodie Trùm Cuối phông tay lỡ nam nữ form rộng\n- Hàng chuẩn Trùm Cuối sản xuất, với những mẫu áo Manga, Comic bá cháy.\n- Chất liệu:  Hoodie  Nỉ Bông 100%, co giãn 2 chiều, vải mềm, vải mịn, thoáng mát, không xù lông.\n- Đường may chuẩn chỉnh, tỉ mỉ, chắc chắn.\n- Họa tiết được in bằng bằng công nghệ Pet Kĩ thuật số, rất chi tiết và bền màu.\n- Thiết kế với những mẫu in độc đáo chỉ có tại Trùm Cuối!!!\n",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2F9789d86537972fcc271811c0e90e770e.jfif?alt=media&token=b632e302-1b06-477d-9380-853ee7e2718f",
+      "rating": 1,
+      "id": 4
+    },
+    {
+      "name": "Áo Hoodie trơn Unisex Trùm Cuối",
+      "price": 38,
+      "sale": 19,
+      "amount": 100,
+      "category": 3,
+      "size": 3,
+      "description": "Áo  Hoodie trơn Unisex Trùm Cuối, KZ  Nỉ Bông 100%, 8 màu nam nữ\n\n- Áo được nhập từng chiếc từ hãng KZ\n- Chất liệu: 100%  Nỉ Bông dày, mịn, thấm mút mồ hôi tốt, không xù lông, mềm mại cho làn da, cầm mát tay.\n- Kĩ thuật may: Kĩ thuật may cao cấp, may bo cổ móc xích đảm bảo độ bền tối đa. Áo may dạng ống, không có đường tà nên vào form rất tốt.\n- Sản phẩm được đóng gói bằng hộp carton thiết kế sang trọng.",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2Fe5cec4c34ef1b1b03275014af618dcc1_tn.jfif?alt=media&token=8d131ca1-6166-4569-87cf-5785d46d6911",
+      "rating": 1,
+      "id": 5
+    },
+    {
+      "name": "Áo Hoodie Anya - Đừng Làm Phiền",
+      "price": 42,
+      "sale": 21,
+      "amount": 100,
+      "category": 2,
+      "size": 3,
+      "description": "hông tin sản phẩm Áo  Hoodie Tshirt Holic phông tay lỡ nam nữ form rộng\n- Hàng chuẩn Tshirt Holic sản xuất, với những mẫu áo Manga, Comic bá cháy.\n- Chất liệu:  Hoodie  Nỉ Bông 100%, co giãn 2 chiều, vải mềm, vải mịn, thoáng mát, không xù lông.\n- Đường may chuẩn chỉnh, tỉ mỉ, chắc chắn.\n- Họa tiết được in bằng bằng công nghệ Pet Kĩ thuật số, rất chi tiết và bền màu.\n- Thiết kế với những mẫu in độc đáo chỉ có tại Tshirt Holic!!!",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2Fd4cc61dc3ef04aca9a92e29cfff6edca.jfif?alt=media&token=8d3a62d6-73a8-41b7-aabd-06d62c652ea2",
+      "rating": 1,
+      "id": 6
+    },
+    {
+      "name": "Áo Hoodie Snorlax Chill",
+      "price": 42,
+      "sale": 21,
+      "amount": 100,
+      "category": 1,
+      "size": 4,
+      "description": "Snorlax nằm nghe nhạc nên ngủ\nThông tin sản phẩm Áo  Hoodie Tshirt Holic phông tay lỡ nam nữ form rộng\n- Hàng chuẩn Tshirt Holic sản xuất, với những mẫu áo Manga, Comic bá cháy.\n- Chất liệu:  Hoodie  Nỉ Bông 100%, co giãn 2 chiều, vải mềm, vải mịn, thoáng mát, không xù lông.\n- Đường may chuẩn chỉnh, tỉ mỉ, chắc chắn.\n- Họa tiết được in bằng bằng công nghệ Pet Kĩ thuật số, rất chi tiết và bền màu.\n- Thiết kế với những mẫu in độc đáo chỉ có tại Tshirt Holic!!!",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-project-f1a10.appspot.com/o/image%2Fsg-11134201-22090-e6gb8h0dgshv65.jfif?alt=media&token=bb0b83f7-7eac-4500-8896-15d5e35101f7",
+      "rating": 1,
+      "id": 7
     }
   ],
   "categories": [
